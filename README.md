@@ -1,2 +1,2 @@
-# be-the-gaffer
-football formation builder.
+# Be The Gaffer
+Football formation builder.

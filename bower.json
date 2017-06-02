@@ -1,0 +1,13 @@
+{
+  "name": "be-the-gaffer",
+  "description": "football formation builder.",
+  "main": "source/app.js",
+  "authors": [
+    "Mujtaba Nowshad"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/iLGunners/be-the-gaffer",
+  "dependencies": {
+    "angular": "^1.6.4"
+  }
+}

@@ -54,3 +54,7 @@ hrApp.run([
 function lg(message) {
     console.log(message);
 }
+
+function returnRectngle(elementClass) {
+    return angular.element(document.querySelector(elementClass))[0].getBoundingClientRect();
+}

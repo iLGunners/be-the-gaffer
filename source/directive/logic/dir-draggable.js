@@ -9,40 +9,58 @@ function dirDraggable ($document) {
             defaultPosition: '=',
         },
         link: function(scope, element, attr) {
-            lg(scope.defaultPosition);
-            var startX, startY, x = scope.defaultPosition.x, y = scope.defaultPosition.y;
+            var startX, startY, originX, originY,
+                x = scope.defaultPosition ? scope.defaultPosition.x : 0,
+                y = scope.defaultPosition ? scope.defaultPosition.y : 0;
+
+            parentElement = angular.element(document.querySelector('#field-div'));
+            var parentX = parentElement[0].clientHeight, parentY = parentElement[0].clientWidth;
+
+            childElement = angular.element(document.querySelector('#player-div'));
+            var childX = childElement[0].clientHeight, childY = childElement[0].clientWidth;
 
             element.css({
                 top: y + 'px',
-                left:  x + 'px',
-                position: 'relative',
-                border: '1px solid red',
-                backgroundColor: 'lightgrey',
-                cursor: 'pointer',
-                display: 'block',
-                width: '65px'
+                left:  x + 'px'
             });
 
             element.on('mousedown', function(event) {
                 event.preventDefault();
-                startX = event.screenX - x;
+                originX = x;
+                originY = y;
                 startY = event.screenY - y;
-                $document.on('mousemove', mousemove);
-                $document.on('mouseup', mouseup);
+                startX = event.screenX - x;
+
+                $document.on('mousemove', mouseMove);
+                $document.on('mouseup', mouseUp);
             });
 
-            function mousemove(event) {
+            function mouseMove(event) {
+                lg("start: " + startY + "," + startX);
                 y = event.screenY - startY;
                 x = event.screenX - startX;
-                element.css({
-                    top: y + 'px',
-                    left:  x + 'px'
-                });
+
+                if(y > 0
+                    && y < parentX-childX
+                    && x > -(parentY/2-childY/2)
+                    && x < (parentY/2-childY/2)) {
+                    element.css({
+                        top: y + 'px',
+                        left:  x + 'px'
+                    });
+                } else {
+                    y = originY;
+                    x = originX;
+                    element.css({
+                        top: y + 'px',
+                        left:  x + 'px'
+                    });
+                }
             }
 
-            function mouseup() {
-                $document.off('mousemove', mousemove);
-                $document.off('mouseup', mouseup);
+            function mouseUp() {
+                $document.off('mousemove', mouseMove);
+                $document.off('mouseup', mouseUp);
             }
         }
     };

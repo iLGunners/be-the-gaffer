@@ -9,5 +9,10 @@ mainPageController.$inject = [
 ];
 
 function mainPageController($scope, $state, localStorageService) {
-    return lg('CONTROLLER > in mainPageController');
+    lg('CONTROLLER > in mainPageController');
+
+    $scope.defaultPosition = {
+        x : 50,
+        y : 50
+    };
 }

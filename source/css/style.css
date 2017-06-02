@@ -7,5 +7,11 @@ body {
     background: green;
     color: aquamarine;
     width: 70%;
+    height: 500px;
     margin: auto;
+}
+
+.player {
+    background: wheat;
+    color: black;
 }

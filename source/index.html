@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="beTheGafferApp">
+
+  <head>
+
+    <title> be the Gaffer </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+
+    <!-- build:distribution-style -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- endbuild -->
+
+  </head>
+
+  <body>
+    <h1 align="center"> this is be the Gaffer! </h1>
+    <!-- this is where content will be injected -->
+    <div ui-view></div>
+
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- build:distribution-logic -->
+    <!-- app.js -->
+    <script type="text/javascript" src="app.js"></script>
+
+    <!-- controllers -->
+    <script src="controllers/main-page.controller.js"></script>
+    <!-- endbuild -->
+
+  </body>
+
+</html>

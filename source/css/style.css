@@ -1,0 +1,11 @@
+body {
+    background: darkred;
+    color: #FFFFFF;
+}
+
+.container {
+    background: green;
+    color: aquamarine;
+    width: 70%;
+    margin: auto;
+}

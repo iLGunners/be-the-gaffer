@@ -8,6 +8,8 @@
   "license": "ISC",
   "homepage": "https://github.com/iLGunners/be-the-gaffer",
   "dependencies": {
-    "angular": "^1.6.4"
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.3",
+    "angular-local-storage": "^0.6.0"
   }
 }

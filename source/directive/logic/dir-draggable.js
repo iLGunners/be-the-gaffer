@@ -24,9 +24,6 @@ function dirDraggable ($document) {
             playerElement = angular.element(document.querySelector('.player'))[0];
             var childY = playerElement.clientHeight, childX = playerElement.clientWidth;
 
-            var playerRectangle = returnRectangle('.player');
-
-            // lg("parentX:" +parentX +",parentY:" +parentY +",childX:" +childX +",childY:" +childY);
             element.css({
                 top: y + 'px',
                 left:  x + 'px'

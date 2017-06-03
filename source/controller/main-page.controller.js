@@ -14,16 +14,11 @@ function mainPageController($scope, $state, localStorageService) {
     parentElement = angular.element(document.querySelector('.field'));
     var parentX = parentElement[0].clientHeight, parentY = parentElement[0].clientWidth;
 
-    var rect = returnRectngle('.field');
+    var rect = returnRectangle('.field');
     // lg("t:" + rect.top + " r:" + rect.right + " b:" + rect.bottom + " l:" + rect.left);
 
     $scope.defaultPosition = {
         x: 0,
         y: 0
-    };
-
-    $scope.defaultPosition = {
-        x: 50,
-        y: 50
     };
 }

@@ -23,10 +23,7 @@ function mainPageController($scope, $state, localStorageService) {
         {
             id: 2,
             title: "slot2",
-            item: {
-                no: 1,
-                title: "One"
-            }
+            item: null
         }
     ];
 

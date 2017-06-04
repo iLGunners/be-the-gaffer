@@ -1,6 +1,5 @@
 <div id="field-div"
-     class="field"
-     align="center">
+     class="field">
 
     <div ng-repeat="playerSlotObj in playerSlotObjList">
         <div class="player-pos-slot"
@@ -8,6 +7,7 @@
              ng-drop-success="onDropComplete($event, $data)">
             <span class="title" ng-bind="playerSlotObj.title"></span>
             <div class="player"
+                 ng-show="playerSlotObj.item"
                  ng-drag="true"
                  ng-drag-data="playerSlotObj.item"
                  data-allow-transform="true"

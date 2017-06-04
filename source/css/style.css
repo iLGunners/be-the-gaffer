@@ -6,24 +6,24 @@ body {
 .field {
     background: green;
     border: 5px solid white;
+    position: relative;
     width: 480px;
     height: 600px;
     margin: auto;
 }
 
 .player-pos-slot {
-    background: lightgreen;
+    background-color: rgba(0, 0, 255, 0.2);
     border: 2px solid black;
     text-align: center;
     width: 100px;
     height: 100px;
-    display: block;
-    position: relative;
 }
 
 .player {
     background: wheat;
     color: black;
+    text-align: center;
     cursor: pointer;
     width: 50px;
     height: 70px;

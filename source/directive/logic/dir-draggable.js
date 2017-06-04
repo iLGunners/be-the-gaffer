@@ -32,8 +32,9 @@ function dirDraggable ($document) {
             element.on('mousedown', function(event) {
                 event.preventDefault();
 
-                originX = x;
                 originY = y;
+                originX = x;
+
                 startY = event.screenY - y;
                 startX = event.screenX - x;
 
@@ -42,11 +43,16 @@ function dirDraggable ($document) {
             });
 
             function mouseMove(event) {
-                y = event.screenY - startY;
-                x = event.screenX - startX;
+
 
                 if(returnRectangle('#' + scope.id).top <= returnRectangle('.field').top){
                     lg("Top Hit");
+                    y = originY; x = originX;
+
+                    element.css({
+                        top: originY + 'px',
+                        left:  originX + 'px'
+                    });
                 } else if(returnRectangle('#' + scope.id).bottom >= returnRectangle('.field').bottom){
                     lg("Bottom Hit");
                 } else if(returnRectangle('#' + scope.id).left <= returnRectangle('.field').left){
@@ -54,6 +60,10 @@ function dirDraggable ($document) {
                 } else if(returnRectangle('#' + scope.id).right >= returnRectangle('.field').right){
                     lg("Right Hit");
                 } else {
+                    lg("else");
+                    y = event.screenY - startY;
+                    x = event.screenX - startX;
+
                     element.css({
                         top: y + 'px',
                         left:  x + 'px'

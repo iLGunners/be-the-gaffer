@@ -11,16 +11,24 @@ mainPageController.$inject = [
 function mainPageController($scope, $state, localStorageService) {
     lg('CONTROLLER > in mainPageController');
 
-    parentElement = angular.element(document.querySelector('.field'));
-    var parentX = parentElement[0].clientHeight, parentY = parentElement[0].clientWidth;
-
-    // var rect = returnRectangle('.field');
-    // lg("t:" + rect.top + " r:" + rect.right + " b:" + rect.bottom + " l:" + rect.left);
-
-    $scope.defaultPosition = {
-        x: 0,
-        y: 0
-    };
+    $scope.playerSlotObjList = [
+        {
+            id: 1,
+            title: "slot1",
+            item: {
+                no: 2,
+                title: "Two"
+            }
+        },
+        {
+            id: 2,
+            title: "slot2",
+            item: {
+                no: 1,
+                title: "One"
+            }
+        }
+    ];
 
     var onDraggableEvent = function(evt, data) {
         console.log("onDraggableEvent", evt, data);
@@ -31,6 +39,6 @@ function mainPageController($scope, $state, localStorageService) {
     
     $scope.onDropComplete = function (evt, data) {
         lg("drop success, data:", data);
-    }
+    };
 
 }

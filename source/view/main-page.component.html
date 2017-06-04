@@ -1,23 +1,33 @@
 <div id="field-div"
-     class="drop-container field"
-     align="center"
-     ng-drop-success="onDropComplete($event, $data)"
-     ng-drop="true">
+     class="field"
+     align="center">
 
-    <div id="player1" class="player" ng-drag="true"> P 1 </div>
+    <div ng-repeat="playerSlotObj in playerSlotObjList">
+        <div class="player-pos-slot"
+             ng-drop="true"
+             ng-drop-success="onDropComplete($event, $data)">
+            <span class="title" ng-bind="playerSlotObj.title"></span>
+            <div class="player"
+                 ng-drag="true"
+                 ng-drag-data="playerSlotObj.item"
+                 data-allow-transform="true"
+                 ng-bind="playerSlotObj.item.title">
+            </div>
+        </div>
+    </div>
 
-    <!--<h3> this is your <i> "team" </i> </h3>-->
+    <!--<div class="player-pos-slot"-->
+         <!--ng-drop="true"-->
+         <!--ng-drop-success="onDropComplete($event, $data)">-->
+        <!--<span class="title"> Drop area </span>-->
 
-    <!--<div id="player1" class="player" dir-draggable default-position=defaultPosition> P 1 </div>-->
-    <!--<div id="player2" class="player" dir-draggable default-position=defaultPosition> P 2 </div>-->
-    <!--<div id="player3" class="player" dir-draggable default-position=defaultPosition> P 3 </div>-->
-    <!--<div id="player4" class="player" dir-draggable default-position=defaultPosition> P 4 </div>-->
-    <!--<div id="player5" class="player" dir-draggable default-position=defaultPosition> P 5 </div>-->
-    <!--<div id="player6" class="player" dir-draggable default-position=defaultPosition> P 6 </div>-->
-    <!--<div id="player7" class="player" dir-draggable default-position=defaultPosition> P 7 </div>-->
-    <!--<div id="player8" class="player" dir-draggable default-position=defaultPosition> P 8 </div>-->
-    <!--<div id="player9" class="player" dir-draggable default-position=defaultPosition> P 9 </div>-->
-    <!--<div id="player10" class="player" dir-draggable default-position=defaultPosition> P 10 </div>-->
-    <!--<div id="player11" class="player" dir-draggable default-position=defaultPosition> P 11 </div>-->
+        <!--<div class="item"-->
+             <!--ng-repeat="obj in droppedObjects"-->
+             <!--ng-drag="true"-->
+             <!--ng-drag-data="obj"-->
+             <!--ng-drag-success="onDragComplete($data, $event)">-->
+            <!--{{obj.title}}-->
+        <!--</div>-->
+    <!--</div>-->
 
 </div>

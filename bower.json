@@ -10,6 +10,7 @@
   "dependencies": {
     "angular": "^1.6.4",
     "angular-ui-router": "^1.0.3",
-    "angular-local-storage": "^0.6.0"
+    "angular-local-storage": "^0.6.0",
+    "ngDraggable": "^0.1.11"
   }
 }

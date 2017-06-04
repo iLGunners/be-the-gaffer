@@ -1,10 +1,14 @@
 <div id="field-div"
-     class="field container"
-     align="center">
+     class="drop-container field"
+     align="center"
+     ng-drop-success="onDropComplete($event, $data)"
+     ng-drop="true">
+
+    <div id="player1" class="player" ng-drag="true"> P 1 </div>
 
     <!--<h3> this is your <i> "team" </i> </h3>-->
 
-    <div id="player1" class="player" dir-draggable default-position=defaultPosition> P 1 </div>
+    <!--<div id="player1" class="player" dir-draggable default-position=defaultPosition> P 1 </div>-->
     <!--<div id="player2" class="player" dir-draggable default-position=defaultPosition> P 2 </div>-->
     <!--<div id="player3" class="player" dir-draggable default-position=defaultPosition> P 3 </div>-->
     <!--<div id="player4" class="player" dir-draggable default-position=defaultPosition> P 4 </div>-->

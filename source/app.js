@@ -2,7 +2,8 @@ var hrApp = angular.module(
     'beTheGafferApp',
     [
         'ui.router',
-        'LocalStorageModule'
+        'LocalStorageModule',
+        'ngDraggable'
         // 'ngMaterial'
     ]
 );

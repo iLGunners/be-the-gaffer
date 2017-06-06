@@ -6,8 +6,11 @@ body {
 .field {
     background: green;
     border: 5px solid white;
-    position: relative;
-    width: 480px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 500px;
     height: 600px;
     margin: auto;
 }
@@ -16,12 +19,12 @@ body {
     background-color: rgba(0, 0, 255, 0.2);
     border: 2px solid black;
     text-align: center;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
 }
 
 .drag-enter {
-  border: solid 2px red;
+    border: solid 2px red;
 }
 
 .player {
@@ -34,5 +37,5 @@ body {
 }
 
 [ng-drag].dragging {
-  opacity: 0.5;
+    opacity: 0.5;
 }

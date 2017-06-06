@@ -4,30 +4,16 @@
     <div ng-repeat="playerSlotObj in playerSlotObjList">
         <div class="player-pos-slot"
              ng-drop="true"
-             ng-drop-success="onDropComplete($event, $data)">
+             ng-drop-success="onDropSuccess($event, $data, playerSlotObj)">
             <span class="title" ng-bind="playerSlotObj.title"></span>
             <div class="player"
                  ng-show="playerSlotObj.item"
                  ng-drag="true"
-                 ng-drag-data="playerSlotObj.item"
+                 ng-drag-data="playerSlotObj"
                  data-allow-transform="true"
                  ng-bind="playerSlotObj.item.title">
             </div>
         </div>
     </div>
-
-    <!--<div class="player-pos-slot"-->
-         <!--ng-drop="true"-->
-         <!--ng-drop-success="onDropComplete($event, $data)">-->
-        <!--<span class="title"> Drop area </span>-->
-
-        <!--<div class="item"-->
-             <!--ng-repeat="obj in droppedObjects"-->
-             <!--ng-drag="true"-->
-             <!--ng-drag-data="obj"-->
-             <!--ng-drag-success="onDragComplete($data, $event)">-->
-            <!--{{obj.title}}-->
-        <!--</div>-->
-    <!--</div>-->
 
 </div>
